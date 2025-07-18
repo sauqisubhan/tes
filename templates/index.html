@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>User List</title></head>
+<body>
+<h2>User List</h2>
+<a href="/add">Add New User</a>
+<table border="1">
+  <tr><th>ID</th><th>Name</th><th>Email</th><th>Nomor HP</th><th>Action</th></tr>
+  {{range .}}
+  <tr>
+    <td>{{.ID}}</td>
+    <td>{{.Name}}</td>
+    <td>{{.Email}}</td>
+    <td>{{.Nomor}}</td>
+    <td>
+      <a href="/edit?id={{.ID}}"   onclick="return confirm('Edit user ini?');">Edit</a> |
+      <a href="/delete?id={{.ID}}" onclick="return confirm('Hapus user ini?');">Delete</a>
+    </td>
+  </tr>
+  {{end}}
+</table>
+</body>
+</html>

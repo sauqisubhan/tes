@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tester</title></head>
+<body>
+<p align="center">
+<h2>{{if .ID}}Edit{{else}}Add{{end}} User</h2>
+<form method="POST" action="{{if .ID}}/update{{else}}/insert{{end}}">
+  {{if .ID}}<input type="hidden" name="id" value="{{.ID}}">{{end}}
+  <label>Name:</label><br>
+  <input type="text" name="name" value="{{.Name}}"><br>
+  <label>Email:</label><br>
+  <input type="email" name="email" value="{{.Email}}"><br>
+  <label>Nomor HP:</label><br>
+  <input type="nomor" name="nomor" value="{{.Nomor}}"><br>
+  <input type="submit" value="Save">
+  <a href="/">Cancel</a>
+</form>
+</p>
+</body>
+</html>
